@@ -33,8 +33,10 @@ public class SocioExcelExporter {
             cell.setCellValue((Boolean) value);
         } else if (value instanceof Long) {
             cell.setCellValue((Long) value);
-        }else {
-            cell.setCellValue((String) value);
+        } else if (value == null) {
+            cell.setCellValue("");
+        } else {
+            cell.setCellValue(value.toString());
         }
         cell.setCellStyle(style);
     }
@@ -84,7 +86,18 @@ public class SocioExcelExporter {
             createCell(row, columnCount++, socio.getNombre(), style);
             createCell(row, columnCount++, socio.getApellido(), style);
             createCell(row, columnCount++, socio.getDni(), style);
-            //TODO: SocioExcelExporter - finalizar implementacion
+            createCell(row, columnCount++, socio.isActivo(), style);
+            createCell(row, columnCount++, socio.getFechaNacimiento(), style);
+            createCell(row, columnCount++, socio.getGenero(), style);
+            createCell(row, columnCount++, socio.getDireccion(), style);
+            createCell(row, columnCount++, socio.getAltura(), style);
+            createCell(row, columnCount++, socio.getPiso(), style);
+            createCell(row, columnCount++, socio.getDepartamento(), style);
+            createCell(row, columnCount++, socio.getBarrioId(), style);
+            createCell(row, columnCount++, socio.getLocalidadId(), style);
+            createCell(row, columnCount++, socio.getProvinciaId(), style);
+            createCell(row, columnCount++, socio.getCategoriaSocioId(), style);
+            createCell(row, columnCount++, socio.getTipoSocio(), style);
 
         }
     }

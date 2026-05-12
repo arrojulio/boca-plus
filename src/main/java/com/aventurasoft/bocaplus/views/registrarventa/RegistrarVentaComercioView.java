@@ -221,7 +221,7 @@ public class RegistrarVentaComercioView extends VerticalLayout {
     {
         List<Promocion> promocions = new ArrayList<>();
         for (PromocionComercio promocionComercio : promocionComercioService.getPromocionComerciosValidTodayByComercioId(comercio.getId()))
-            promocions.add(promocionService.load(promocionComercio.getId()));
+            promocions.add(promocionService.load(promocionComercio.getPromocionId()));
 
         return promocions;
     }
