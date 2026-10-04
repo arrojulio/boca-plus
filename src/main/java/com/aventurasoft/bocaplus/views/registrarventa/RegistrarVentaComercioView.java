@@ -139,7 +139,7 @@ public class RegistrarVentaComercioView extends VerticalLayout {
     }
 
     private void validar() {
-        if (socioTextField.getValue() == "")
+        if (socioTextField.getValue().isEmpty())
         {
             Notification.show("Socio faltante");
             return;
@@ -151,7 +151,7 @@ public class RegistrarVentaComercioView extends VerticalLayout {
             return;
 
         }
-        if (importe.getValue() == "")
+        if (importe.getValue().isEmpty())
         {
             Notification.show("Importe faltante");
             return;
